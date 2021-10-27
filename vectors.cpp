@@ -35,7 +35,7 @@ public:
 
     // this function should return the length of the current vector
     double length() const {
-        return sqrt(this->x*this->x+this->y+this->y);
+        return sqrt(this->x*this->x+this->y*this->y);
     }
 
     // this function should return the angle between the current vector and another "other"
