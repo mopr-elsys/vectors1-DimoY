@@ -14,33 +14,33 @@ class Vector {
 
 public:
     Vector() : x(0), y(0) {}
-    Vector(double x, double y) : x(x), y(y) {}
+    Vector(double x, double y) : x(x), y(y) {}//автоматично съставяне
     // if we denote p1 and p2 as points A and B, their radius-vectors would be OA and OB
     Vector(Point p1, Point p2) : x(p2.x - p1.x), y(p2.y - p1.y) {}
 
     // this function should return the sum of the current vector and another "other" as a new Vector
-    Vector sum(const Vector& other) const {
-        return Vector(0, 0);
+    Vector sum(const Vector& other) const {//тялото на метода не може да се проментя
+        return Vector(this->x+other.x, this->y+other.y);
     }
 
     // this function should return the difference of the current vector and another "other" as a new Vector
     Vector difference(const Vector& other) const {
-        return Vector(0, 0);
+        return Vector(this->x-other.x, this->y-other.y);
     }
 
     // this function should return a boolean value, answering the question whether the current vector and another "other" are collinear
     bool is_colinear(const Vector& other) const {
-        return false;
+        return (other.x/this->x) == (other.y/this->y);
     }
 
     // this function should return the length of the current vector
     double length() const {
-        return 0;
+        return sqrt(this->x*this->x+this->y+this->y);
     }
 
     // this function should return the angle between the current vector and another "other"
     double angle(const Vector& other) const {
-        return 0;
+        return acos((this->x*other.x+this->y*other.y)/(this->length()+other.length()));
     }
 
     // this is for printing the vector
