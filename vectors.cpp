@@ -52,8 +52,9 @@ public:
 
 // this function should find the area of the triangle made up of the three points p1, p2, p3
 double area(const Point& p1, const Point& p2, const Point& p3) {
-    Vector a = Vector((p1.x-p2.x),(p1.y-p2.y)),b = Vector((p2.x-p3.x),(p2.y-p3.y));
-    return a.length()*b.length()*cos(a.angle(b));
+    Vector a = Vector((p1.x-p2.x),(p1.y-p2.y)),b = Vector((p2.x-p3.x),(p2.y-p3.y)),c = Vector((p3.x-p1.x),(p3.y-p1.y));
+    double sum = (a.length()+b.length()+c.length())/2;
+    return sqrt(sum*(sum-a.length())*(sum-b.length())*(sum-c.length()));
 }
 
 // this function should find the area of the figure made up of up to 50 points
