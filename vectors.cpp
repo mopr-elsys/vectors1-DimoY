@@ -40,7 +40,7 @@ public:
 
     // this function should return the angle between the current vector and another "other"
     double angle(const Vector& other) const {
-        return acos((this->x*other.x+this->y*other.y)/(this->length()+other.length()));
+        return acos((this->x*other.x+this->y*other.y)/(this->length()*other.length()));
     }
 
     // this is for printing the vector
