@@ -62,7 +62,7 @@ double area(const Point points[50], int size) {
     Point first = points[0];
     double area_full=0;
     for(int i= 1;i<size-1;i++){
-        area_full+=(first,points[i],points[i+1]);
+        area_full+=area(first,points[i],points[i+1]);
     }
     return area_full;
 }
